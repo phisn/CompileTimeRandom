@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{40c857ad-9a34-4ed4-a1ca-9dc09a1b0087}</ProjectGuid>
+    <ProjectGuid>{fa5cbb1d-e0fc-4e89-a65f-c5688f792cd3}</ProjectGuid>
     <RootNamespace>CompileTimeRandom</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -139,10 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="CompileTimeRandom.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CompileTimeRandom.h" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
