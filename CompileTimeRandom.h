@@ -115,4 +115,23 @@ namespace Dynlec
 
 	template <uint64_t iteration>
 	constexpr static uint64_t CTRandomGeneratorValueSeeded = CTRandomGeneratorValue<iteration, CTRandomSeed>;
+
+	template <uint64_t n, uint64_t seed = ::Dynlec::CTRandomSeed>
+	struct CTRandomStream
+	{
+		// callback(uint64_t index [0;n[, uint64_t random_number)
+		template <typename T>
+		static void Call(T callback)
+		{
+			CTRandomStream<n - 1, seed>::Call(callback);
+			callback(n - 1, CTRandomGeneratorValue<n, seed>);
+		}
+	};
+
+	template <uint64_t seed>
+	struct CTRandomStream<0, seed>
+	{
+		template <typename T>
+		static void Call(T callback) { }
+	};
 }

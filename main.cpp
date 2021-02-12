@@ -8,13 +8,10 @@ int main()
 	// number because the internal state is only updated for each occurance
 	// of the DYC_RAND_... macro
 
-	std::cout << DYC_RAND_NEXT_BETWEEN(1, 11) << std::endl;
-	std::cout << DYC_RAND_NEXT_BETWEEN(1, 11) << std::endl;
-	std::cout << DYC_RAND_NEXT_BETWEEN(1, 11) << std::endl;
-	std::cout << DYC_RAND_NEXT_BETWEEN(1, 11) << std::endl;
-	std::cout << DYC_RAND_NEXT_BETWEEN(1, 11) << std::endl;
-	std::cout << DYC_RAND_NEXT_BETWEEN(1, 11) << std::endl;
-	std::cout << DYC_RAND_NEXT_BETWEEN(1, 11) << std::endl;
-	std::cout << DYC_RAND_NEXT_BETWEEN(1, 11) << std::endl;
-	std::cout << DYC_RAND_NEXT_BETWEEN(1, 11) << std::endl;
+	int array[50];
+
+	Dynlec::CTRandomStream<50>::Call([&array](uint64_t index, uint64_t n)
+		{ 
+			array[index] = n;
+		});
 }
